@@ -4,7 +4,8 @@ FROM ubuntu:22.04
 ENV STEAMCMD_DIR /usr/games/steamcmd
 ENV VALHEIM_DIR /opt/valheim
 ENV VALHEIM_SAVE /opt/valheim_save
-ENV VALHEIM_PLUS_URL https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.9.11/UnixServer.tar.gz
+#ENV ENV VALHEIM_PLUS_URL https://github.com/valheimPlus/ValheimPlus/releases/download/0.9.9.11/UnixServer.tar.gz # Official release
+ENV VALHEIM_PLUS_URL https://github.com/Grantapher/ValheimPlus/releases/download/0.9.9.16/UnixServer.tar.gz
 
 # Insert Steam prompt answers
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -39,4 +40,4 @@ EXPOSE 2456-2458/udp
 VOLUME ${VALHEIM_SAVE}
 
 # Command to run
-CMD ["/opt/valheim/start_server_bepinex.sh"]
+CMD ["/bin/bash", "-c", "cd $VALHEIM_DIR && ./start_server_bepinex.sh"]
