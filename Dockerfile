@@ -50,7 +50,8 @@ EXPOSE 2456-2458/udp
 
 # Volume for persistence
 VOLUME ${VALHEIM_WORLD}
-VOLUME ${VALHEIM_CONFIG}
+# FIXME: Mounting the dir and not the config cause the server to not find the start script
+VOLUME ${VALHEIM_DIR}
 
 # Switch to valheim user
 USER valheim
