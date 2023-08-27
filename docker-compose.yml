@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  valheim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: valheim-server
+    ports:
+      - "2456-2458:2456-2458/udp"
+    volumes:
+      - valheim-world-data:${VALHEIM_WORLD}
+      - valheim-server-data:${VALHEIM_DIR}
+
+volumes:
+  valheim-world-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: C:\Temp\valheim
+
+  valheim-server-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: C:\Temp\valheim_dir
