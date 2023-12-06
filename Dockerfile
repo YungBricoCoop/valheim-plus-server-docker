@@ -5,7 +5,7 @@ ENV STEAMCMD_DIR /usr/games/steamcmd
 ENV VALHEIM_DIR /opt/valheim
 ENV VALHEIM_WORLD /home/valheim/.config/unity3d/IronGate/Valheim
 ENV VALHEIM_CONFIG $VALHEIM_DIR/BepInEx/config
-ENV VALHEIM_PLUS_URL https://github.com/Grantapher/ValheimPlus/releases/download/0.9.9.17/UnixServer.tar.gz
+ENV VALHEIM_PLUS_URL https://github.com/Grantapher/ValheimPlus/releases/download/0.9.12.0-alpha01/UnixServer.tar.gz
 
 # Server environment variables
 ENV SERVER_NAME "Docker Valheim Server"
